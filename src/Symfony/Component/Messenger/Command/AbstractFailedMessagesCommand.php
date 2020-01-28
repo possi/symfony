@@ -98,7 +98,7 @@ abstract class AbstractFailedMessagesCommand extends Command
             $dump = new Dumper($io);
             $io->writeln($dump($envelope->getMessage()));
             $io->title('Exception:');
-            $io->writeln(null === $flattenException ? '(no data)' : $flattenException->getTraceAsString());
+            $io->writeln(null === $flattenException ? '(no data)' : $flattenException->getAsString());
         } else {
             $io->writeln(' Re-run command with <info>-vv</info> to see more message & error details.');
         }
